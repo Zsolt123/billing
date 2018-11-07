@@ -4,30 +4,32 @@ import com.flexionmobile.codingchallenge.integration.Purchase;
 
 public class PurchaseModel implements Purchase {
 
-    private final boolean consumed;
-    private final String id;
-    private final String itemId;
+    private String id;
+    private String itemId;
+    private boolean consumed;
 
-    public PurchaseModel(final boolean consumed, final String id, final String itemId) {
+    public PurchaseModel(final String id, final String itemId, final boolean consumed) {
 
-        this.consumed = consumed;
         this.id = id;
         this.itemId = itemId;
+        this.consumed = consumed;
     }
 
-    public boolean getConsumed() {
-
-        return consumed;
-    }
-
+    @Override
     public String getId() {
 
         return id;
     }
 
+    @Override
     public String getItemId() {
 
         return itemId;
     }
 
+    @Override
+    public boolean getConsumed() {
+
+        return consumed;
+    }
 }
